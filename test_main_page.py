@@ -1,3 +1,5 @@
+import pytest
+
 from .pages.main_page import MainPage
 from .pages.login_page import LoginPage
 import time
@@ -35,3 +37,5 @@ def test_should_be_register_form(browser):
     page = LoginPage(browser, link)
     page.open()
     page.should_be_register_form()
+
+
