@@ -1,3 +1,5 @@
+
+
 from .locators import BayPageLocators
 
 from .base_page import BasePage
@@ -20,3 +22,14 @@ class BayPage(BasePage):
         product_cost = self.browser.find_element(*BayPageLocators.PRODUCT_COST).text
         assert product_cost in self.browser.find_element(
             *BayPageLocators.COST_MESSAGE).text, 'Не правильная стоимость корзины'
+
+    def should_not_be_success_message(self):
+        assert self.is_not_element_present(*BayPageLocators.ADD_MESSAGE), \
+            "Success message is presented, but should not be"
+
+    def should_is_disappeared(self):
+        assert self.is_disappeared(*BayPageLocators.ADD_MESSAGE), \
+            "Success message should disappeared, but not do it"
+
+
+
