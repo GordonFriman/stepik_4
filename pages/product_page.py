@@ -8,7 +8,7 @@ text1 = ' был добавлен в вашу корзину.'
 text2 = 'Стоимость корзины теперь составляет '
 
 
-class BayPage(BasePage):
+class ProductPage(BasePage):
     def add_to_basket(self):
         basket_button = self.browser.find_element(*BayPageLocators.BASKET_BUTTON)
         basket_button.click()
